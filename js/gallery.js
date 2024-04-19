@@ -65,6 +65,11 @@ const images = [
 ];
 
 
+
+
+
+
+
 const gallery = document.querySelector("ul.gallery");
 const markup = images.map(({preview, original, description}) =>
     `
