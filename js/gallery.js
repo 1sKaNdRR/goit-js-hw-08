@@ -93,27 +93,16 @@ gallery.addEventListener("click", (event) => {
   event.preventDefault();
   const target = event.target;
   if (
-    target.classList.contains("gallery-image") ||
-    target.classList.contains("gallery-link")
-  ) {
+    target.classList.contains("gallery-image")) {
     const largeImageSrc = target.dataset.source;
     console.log(largeImageSrc);
     instance = basicLightbox.create(`
       <img src="${largeImageSrc}" width="800" height="600">
     `);
     instance.show();
-    const lightboxContainer = document.querySelector('.basicLightbox__placeholder');
-    lightboxContainer.appendChild(instance.element());
-    event.stopPropagation();
   }
 });
 
-document.addEventListener('click', (event) => {
-  const lightbox = document.querySelector('.basicLightbox');
-  if (instance && !lightbox.contains(event.target)) {
-    instance.close();
-  }
-});
 
 
 
